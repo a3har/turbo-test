@@ -4,10 +4,9 @@ type Props = {
   params: Promise<{
     slug: string
   }>
-  searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export default async function BlogPost({ params, searchParams }: Props) {
+export default async function BlogPost({ params }: Props) {
   const resolvedParams = await params
   // Example validation - in a real app, you'd fetch the post data here
   if (!resolvedParams.slug) {
